@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TodoTuto</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <title>Todo Tuto</title>
+  <%= stylesheet_link_tag    "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="contents">
+    <div id="header">
+      <% flash.each do |key, value| -%>
+        <div class="flash <%= key %>"><%= value %></div>
+      <% end -%>
+    </div>
 
-<%= yield %>
+    <%= yield %>
+  </div>
 
+  <%= javascript_include_tag "application" %>
+  <%= yield :javascript %>
 </body>
 </html>
