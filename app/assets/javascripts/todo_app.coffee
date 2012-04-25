@@ -4,4 +4,6 @@ window.TodoApp=
 	Views: {}
 	Routers: {}
 	initialize: (data) ->
-		alert 'Headbone connected to the backbone...'
+		@tasks = new TodoApp.Collections.Tasks(data.tasks)
+		new TodoApp.Routers.TodoAppRouter(collection: @tasks)
+		Backbone.history.start() unless Backbone.history.started

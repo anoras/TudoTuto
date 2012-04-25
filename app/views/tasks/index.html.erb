@@ -1,9 +1,12 @@
 <h1>Tasks</h1>
+<div id="tasks">Tasks should appear here...</div>
 
 <%= content_for :javascript do -%>
   <script type="text/javascript">
     $(function() {
-	  TodoApp.initialize();
+	  TodoApp.initialize({
+		  tasks: <%= @tasks.to_json %>
+	  });
 	});
   </script>
 <% end %>
