@@ -5,7 +5,7 @@
   <script type="text/javascript">
     $(function() {
 	  TodoApp.initialize({
-		  tasks: <%= @tasks.to_json %>
+		  tasks: <%= raw(@tasks.to_json) %>
 	  });
 	});
   </script>
