@@ -1,6 +1,7 @@
 class @TodoApp.Routers.TodoAppRouter extends Support.SwappingRouter
 	routes:
 		''		: 'index'
+		'new'	: 'new'
 	
 	initialize: (options) ->
 		@el = $('#tasks')
@@ -8,3 +9,6 @@ class @TodoApp.Routers.TodoAppRouter extends Support.SwappingRouter
 	index: ->
 		view = new TodoApp.Views.TaskIndex(collection: @collection)
 		@swap(view) 
+	new: ->
+		view = new TodoApp.Views.TaskNew(collection: @collection)
+		@swap(view)

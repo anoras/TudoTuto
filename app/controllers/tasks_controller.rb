@@ -3,4 +3,7 @@ class TasksController < ApplicationController
   def index
     @tasks = Task.all
   end
+  def create
+    respond_with(Task.create(params[:task]))
+  end
 end
